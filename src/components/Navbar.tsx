@@ -62,17 +62,17 @@ const Navbar = () => {
           onClick={closeMenu}
         >
           <motion.nav
-            className="min-h-0 bg-browney p-8 rounded-md text-honolulu flex flex-col justify-center items-center gap-10 pb-12 w-3/4 h-1/2"
+            className="min-h-0 bg-browney p-8 rounded-md text-darkgrey font-bold flex flex-col justify-center items-center w-1/2 min-w-[250px] h-1/2"
             variants={menuVariants}
             initial="closed"
             animate="open"
             exit="closed"
             transition={{ damping: 300 }}
           >
-            <button onClick={closeMenu} className="hover:cursor-pointer self-end z-50">
+            <button onClick={closeMenu} className="hover:cursor-pointer self-end z-50 text-honolulu">
               <IoClose size={30} />{" "}
             </button>
-            <ul className="flex flex-col gap-6 mt-4">
+            <ul className="flex flex-col gap-8 mt-3">
               <motion.li
                 whileTap={{ scale: 0.9 }}
                 initial="hidden"
@@ -85,7 +85,15 @@ const Navbar = () => {
                 whileTap={{ scale: 0.9 }}
                 initial="hidden"
                 animate="visible"
-                className="cursor-pointer"
+                className="cursor-pointer uppercase"
+              >
+                <Link href="#tarifs">Tarifs</Link>
+              </motion.li>
+              <motion.li
+                whileTap={{ scale: 0.9 }}
+                initial="hidden"
+                animate="visible"
+                className="cursor-pointer uppercase"
               >
                 <Link href="#contact">Contact</Link>
               </motion.li>
