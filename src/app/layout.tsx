@@ -1,12 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Navbar from '@/components/Navbar'
-const inter = Inter({ subsets: ['latin'] })
-
+import { syne, inter } from "../fonts"
 export const metadata: Metadata = {
-  title: 'Day Cutting Sharp',
-  description: 'Entreprise d"affûtage de couteaux et de ciseaux',
+  title: 'Daycuttingsharp - Affûteur, basé à Sète, de couteaux, ciseaux et outils de jardinage de qualité',
+  description: 'Daycuttingsharp est une entreprise d&apos;affûtage de couteaux qui propose des services d&apos;affûtage de couteaux, de ciseaux et d&apos;outils de jardinage de qualité.Nous offrons un service d&apos;affûtage à domicile et en entreprise, et nous proposons des prix abordables.',
 }
 
 export default function RootLayout({
@@ -15,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="fr" className={`${syne.variable} ${inter.variable}`}>
+      <body >
         {children}
       </body>
     </html>
