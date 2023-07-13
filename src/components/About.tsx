@@ -4,7 +4,7 @@ import meleuse from '../../public/meleuse1.jpg'
 import car from '../../public/car.jpg'
 import jardinage from '../../public/jardinage.jpg'
 const About = () => {
-  return (<div id="about" className="border-browney border-2 pt-10 pb-10">
+  return (<div id="about" className="border-browney  border-t border-t-browney pt-10 pb-10">
     <h2 className='whitespace-nowrap text-2xl text-center sm:text-3xl md:text-4xl uppercase font-bold'>
       Qui suis-je ?
     </h2>

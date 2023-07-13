@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/accordion"
 const Faq = () => {
   return (
-    <div id="faq" className="p-10 sm:p-20 border-2 border-browney">
+    <div id="faq" className="p-10 sm:p-20 border-t border-t-browney ">
       <h2 className="text-center text-2xl uppercase font-bold mb-10">Foire aux questions</h2>
       <div className="container mx-auto md:w-3/4 lg:w-1/2 bg-browney text-darkgrey rounded-xl">
         <Accordion type="single" collapsible>

@@ -1,7 +1,7 @@
 import { FcCellPhone } from 'react-icons/fc';
 const Contact = () => {
   return (
-    <div id="contact" className="py-20">
+    <div id="contact" className="py-20  border-t border-t-browney ">
       <div className="container mx-auto">
         <div className="flex flex-col justify-center items-center">
           <h2 className="uppercase  text-2xl text-center sm:text-3xl font-bold ">Contact</h2>
