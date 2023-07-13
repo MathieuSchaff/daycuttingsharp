@@ -2,6 +2,7 @@ import Image from "next/image"
 import profil from '../../public/profil.jpg'
 import meleuse from '../../public/meleuse1.jpg'
 import car from '../../public/car.jpg'
+import jardinage from '../../public/jardinage.jpg'
 const About = () => {
   return (<div id="about" className="border-browney border-2 pt-10 pb-10">
     <h2 className='whitespace-nowrap text-2xl text-center sm:text-3xl md:text-4xl uppercase font-bold'>
@@ -25,7 +26,30 @@ const About = () => {
         objectFit="cover"
       />
     </section>
-    <section className="flex flex-col-reverse md:flex-row items-center justify-center gap-6 mt-12 p-5">
+    <section className="flex flex-col md:flex-row-reverse items-center justify-center gap-6 mt-14 p-5">
+      <div className="sm:w-3/4 md:w-1/2 ">
+        <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase">Affûtage</h3>
+        <p className="leading-8">
+          Je&apos;affûte tous types de couteaux, de ciseaux et d&apos;outils de jardinage. Je peux également affûter vos outils de cuisine, vos outils de boucherie, vos outils de jardinage, vos outils de pêche, vos outils de chasse, etc. Je suis un professionnel de l&apos;affûtage et j&apos;utilise des techniques modernes pour redonner à vos outils leur tranchant d&apos;origine.
+        </p>
+      </div>
+      <Image
+        src={jardinage}
+        alt="equipement couteau"
+        width={400}
+        height={300}
+        className="rounded-lg"
+        objectFit="cover"
+      />
+    </section>
+
+    <section className="flex flex-col md:flex-row items-center justify-center gap-6 mt-14 p-5">
+      <div className="sm:w-3/4 md:w-1/2 ">
+        <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase">Mobilité & Déplacements</h3>
+        <p className="leading-8">
+          Ma voiture me permet de me déplacer auprès de vous et m&apos;adapter à vos besoins. Comme vous pouvez le constater, j&apos;ai moi-même aménager ma voiture pour qu&apos;elle corresponde à mes besoins d&apos;entrepreneur!
+        </p>
+      </div>
       <Image
         src={car}
         alt="mon equipement"
@@ -34,16 +58,9 @@ const About = () => {
         className="rounded-lg"
         objectFit="cover"
       />
-      <div className="sm:w-3/4 md:w-1/2 ">
-        <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase">Mobilité & Déplacements</h3>
-        <p className="leading-8">
-          Ma voiture me permet de me déplacer auprès de vous et m&apos;adapter à vos besoins. Comme vous pouvez le constater, j&apos;ai moi-même aménager ma voiture pour qu&apos;elle corresponde à mes besoins d&apos;entrepreneur!
-        </p>
-      </div>
-
     </section>
-    <section className="flex flex-col md:flex-row items-center justify-center gap-6 mt-14 p-5">
-      <div className="sm:w-3/4 md:w-1/2 ">
+    <section className="flex flex-col md:flex-row-reverse items-center justify-center gap-6 mt-14 p-5">
+      <div className="sm:w-3/4 md:w-1/2 flex flex-col items-center" >
         <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase">Mes tarifs</h3>
         <ul className="list-disc list-inside">
           <li>Couteau moins de 10cm - 4,50€</li>
