@@ -16,9 +16,13 @@ const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
+  const openMenu = () => {
     console.log("clicked")
-    setIsMenuOpen(c => !c);
+    setIsMenuOpen(true);
+  };
+  const closeMenu = () => {
+    console.log("clicked")
+    setIsMenuOpen(false);
   };
   return (
     <header className="flex justify-between items-start md:items-center py-4 px-8 shadow-md">
@@ -47,7 +51,7 @@ const Navbar = () => {
           >
             <Link href="#contact">Contact</Link>
           </motion.li>
-          <div className="md:hidden hover:cursor-pointer" onClick={toggleMenu}>
+          <div className="md:hidden hover:cursor-pointer" onClick={openMenu}>
             {isMenuOpen ? <IoClose size={30} /> : <GiHamburgerMenu size={30} />}
           </div>
         </ul>
@@ -55,23 +59,23 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50"
+            className="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex justify-center items-center z-10 md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={toggleMenu}
+            onClick={closeMenu}
           >
             <motion.nav
-              className="bg-browney p-4 rounded-md text-honolulu w-3/4 h-1/2 flex flex-col justify-center items-center gap-6 pb-11"
+              className="min-h-0 bg-browney p-8 rounded-md text-honolulu flex flex-col justify-center items-center gap-10 pb-12 w-3/4 h-1/2"
               variants={menuVariants}
               initial="closed"
               animate="open"
               exit="closed"
               transition={{ damping: 300 }}
             >
-              <div onClick={toggleMenu} className="hover:cursor-pointer self-end">
-                <IoClose size={30} />
-              </div>
+              <button onClick={closeMenu} className="hover:cursor-pointer self-end z-50">
+                <IoClose size={30} />{" "}
+              </button>
               <ul className="flex flex-col gap-6 mt-4">
                 <motion.li
                   whileTap={{ scale: 0.9 }}
