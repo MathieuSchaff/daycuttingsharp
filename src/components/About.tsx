@@ -59,7 +59,7 @@ const About = () => {
         objectFit="cover"
       />
     </section>
-    <section className="flex flex-col md:flex-row-reverse items-center justify-center gap-6 mt-14 p-5">
+    <section className="flex flex-col md:flex-row-reverse items-center justify-center gap-6 mt-14 p-5" id="tarifs">
       <div className="sm:w-3/4 md:w-1/2 flex flex-col items-center" >
         <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase">Mes tarifs</h3>
         <ul className="list-disc list-inside">
