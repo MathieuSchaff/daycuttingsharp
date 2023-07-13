@@ -3,12 +3,12 @@ import Contact from '@/components/Contact'
 import Faq from '@/components/Faq'
 import Header from '@/components/Header'
 import Image from 'next/image'
-
+import { cn } from '@/lib/utils'
 export default function Home() {
   return (<>
-    <div className='min-h-screen'>
+    <div className='min-h-screen flex flex-col'>
       <Header />
-      <main className="flex flex-col pt-8 md:pb-24 md:pt-24">
+      <main className=" flex-grow flex flex-col pt-8 md:pb-24 md:pt-24">
         <h2 className='hidden md:block whitespace-nowrap text-center sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
           Artisan affûteur basé à Sète
         </h2>
@@ -17,7 +17,6 @@ export default function Home() {
           <br />
           Basé à Sète.
         </h2>
-
         <div>
           <Image
             src='/knife2.png'
@@ -28,7 +27,16 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="flex flex-col md:flex-row md:items-start md:justify-center gap-16 sm:gap-14 mt-20 md:mt-24 lg:mt-20 mr-6 sm:mr-10 ml-6 sm:ml-10 text-xl md:text-2xl">
+        <h3 className='text-center text-2xl md:text-3xl lg:text-4xl mt-6 md:mt-10 underline'>
+          Affûtage de couteaux, ciseaux et outils de jardinage
+        </h3>
+        <div className={cn('mt', 'mt-10 md:mt-24 lg:mt-20',
+          'mr', 'mr-6 sm:mr-10',
+          'ml', 'ml-6 sm:ml-10',
+          'flex flex-col justify-around flex-grow', 'md:flex-row',
+          'md:items-start', 'md:justify-center',
+          'sm:gap-14',
+          'text-xl', 'md:text-2xl')}>
           <section className='flex-1'>
             🔪 Êtes-vous un chef de cuisine, un restaurateur ou un passionné de cuisine à la recherche d&apos;un affûteur de couteaux compétent pour répondre à vos besoins ?
           </section>
