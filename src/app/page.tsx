@@ -1,13 +1,13 @@
 import About from '@/components/About'
 import Contact from '@/components/Contact'
 import Faq from '@/components/Faq'
-import Navbar from '@/components/Navbar'
+import Header from '@/components/Header'
 import Image from 'next/image'
 
 export default function Home() {
   return (<>
     <div className='min-h-screen'>
-      <Navbar />
+      <Header />
       <main className="flex flex-col pt-8 md:pb-24 md:pt-24">
         <h2 className='hidden md:block whitespace-nowrap text-center sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
           Artisan affûteur basé à Sète
