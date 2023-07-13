@@ -4,7 +4,7 @@ const Contact = () => {
     <div id="contact" className="py-20">
       <div className="container mx-auto">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="uppercase  text-2xl text-center sm:text-3xl font-bold ">Contact</h1>
+          <h2 className="uppercase  text-2xl text-center sm:text-3xl font-bold ">Contact</h2>
           <p className="text-white mt-4 p-10 w-full sm:w-3/4 md:w-1/2 leading-10">
             👉 Ne négligez pas l&apos;importance d&apos;avoir des couteaux bien affûtés.
             <br />
