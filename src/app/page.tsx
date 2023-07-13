@@ -25,6 +25,7 @@ export default function Home() {
             width={1200}
             height={500}
             className='mx-auto'
+            priority
           />
         </div>
         <div className="flex flex-col md:flex-row md:items-start md:justify-center gap-16 sm:gap-14 mt-20 md:mt-24 lg:mt-20 mr-6 sm:mr-10 ml-6 sm:ml-10 text-xl md:text-2xl">

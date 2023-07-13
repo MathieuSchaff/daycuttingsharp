@@ -1,6 +1,6 @@
 import Image from "next/image"
 import profil from '../../public/profil.jpg'
-import tarifs from '../../public/tarifs.jpg'
+import meleuse from '../../public/meleuse1.jpg'
 import car from '../../public/car.jpg'
 const About = () => {
   return (<div id="about" className="border-browney border-2 pt-10 pb-10">
@@ -42,15 +42,27 @@ const About = () => {
       </div>
 
     </section>
-    <section className="flex flex-col md:flex-row items-center justify-center gap-6 mt-12 p-5">
+    <section className="flex flex-col md:flex-row items-center justify-center gap-6 mt-14 p-5">
       <div className="sm:w-3/4 md:w-1/2 ">
         <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase">Mes tarifs</h3>
-        <p className="leading-8">
-          Je facture ma journée de travail 200 euros. Cela dépend de la distance parcourue pour venir chez vous, ainsi que du type d&apos;affûtage et du nombre de couteaux à travailler.
-        </p>
+        <ul className="list-disc list-inside">
+          <li>Couteau moins de 10cm - 4,50€</li>
+          <li>Couteau plus de 10cm - devis</li>
+          <li>Couteau boucher - 8,50€</li>
+          <li>Couteau à dents - 10,00€</li>
+          <li>Couteau Céramique - devis</li>
+          <li>Couteau haut de fanne - devis</li>
+          <li>Ciseaux classiques - 7,00€</li>
+          <li>Ciseaux Pro - 14,50€</li>
+          <li>Ciseaux à bois (selon largeur) - 6,00€</li>
+          <li>Fer à cabot - 9,00€</li>
+          <li>Goufe - 7,50€</li>
+          <li>Réparation pointe cassée + affûtage - 8,50€</li>
+        </ul>
+        <p>Les tarifs peuvent varier selon l&apos;état.</p>
       </div>
       <Image
-        src={tarifs}
+        src={meleuse}
         alt="equipement couteau"
         width={400}
         height={300}
