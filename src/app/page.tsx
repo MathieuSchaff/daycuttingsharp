@@ -36,7 +36,7 @@ export default function Home() {
           'flex flex-col justify-around flex-grow', 'md:flex-row',
           'md:items-start', 'md:justify-center',
           'sm:gap-14',
-          'text-xl', 'md:text-2xl')}>
+          'text-xl', 'xl:text-2xl')}>
           <section className='flex-1'>
             🔪 Êtes-vous un chef de cuisine, un restaurateur ou un passionné de cuisine à la recherche d&apos;un affûteur de couteaux compétent pour répondre à vos besoins ?
           </section>
