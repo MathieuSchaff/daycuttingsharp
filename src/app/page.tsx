@@ -10,12 +10,17 @@ export default function Home() {
       <Header />
       <main className=" flex-grow flex flex-col pt-8 md:pb-24 md:pt-24">
         <h2 className='hidden md:block whitespace-nowrap text-center sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
-          Artisan affûteur basé à Sète
+          Artisan affûteur à Sète
         </h2>
+        <h3 className='flex justify-center text-3xl text-honolulu'>
+          <a href="tel:+0676306582">
+            06 76 30 65 82
+          </a>
+        </h3>
         <h2 className='mb-6 md:hidden whitespace-nowrap text-center text-4xl md:text-6xl'>
           Artisan affûteur.
           <br />
-          Basé à Sète.
+          à Sète.
         </h2>
         <div>
           <Image
@@ -28,7 +33,7 @@ export default function Home() {
           />
         </div>
         <h3 className='text-center text-2xl md:text-3xl lg:text-4xl mt-6 md:mt-10 underline'>
-          Affûtage de couteaux, ciseaux et outils de jardinage
+          Affûtage de couteaux, ciseaux, outils de jardinage et de tout de qui coupe...
         </h3>
         <div className={cn('mt', 'mt-10 md:mt-24 lg:mt-20',
           'mr', 'mr-6 sm:mr-10',
