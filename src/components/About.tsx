@@ -10,11 +10,11 @@ const About = () => {
     </h2>
     <section className="flex flex-col md:flex-row items-center justify-center gap-6 mt-12 p-5">
       <div className="sm:w-3/4 md:w-1/2 ">
-        <h3 className="text-2xl md:text-3xl font-bold mb-4">PASSIONNÉS PAR L&apos;ART DE LA PRÉCISION</h3>
+        <h3 className="text-2xl md:text-3xl font-bold mb-4">PASSIONNÉ PAR L&apos;ART DE LA PRÉCISION</h3>
         <p className="leading-8">
           Moi, c&apos;est Jeff.
           <br />
-          Avec une passion pour l&apos;affûtage des couteaux, j&apos;ai développé mes compétences au fil des années pour offrir un service de qualité supérieure. Ayant acquis une expérience précieuse dans l&apos;art de l&apos;affûtage après avoir perfectionné mes techniques auprès de maîtres affûteurs, je suis prêt à mettre mon savoir-faire au service de votre cuisine ou de votre établissement.
+          Avec une passion pour l&apos;affûtage des couteaux, j&apos;ai développé mes compétences au fil des années pour offrir un service de qualité supérieure. Ayant acquis une expérience précieuse dans l&apos;art de l&apos;affûtage après avoir perfectionné mes techniques, je suis prêt à mettre mon savoir-faire au service de votre cuisine ou de votre établissement.
         </p>
       </div>
       <Image
@@ -30,7 +30,7 @@ const About = () => {
       <div className="sm:w-3/4 md:w-1/2 ">
         <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase">Affûtage</h3>
         <p className="leading-8">
-          Je&apos;affûte tous types de couteaux, de ciseaux et d&apos;outils de jardinage. Je peux également affûter vos outils de cuisine, vos outils de boucherie, vos outils de jardinage, vos outils de pêche, vos outils de chasse, etc. Je suis un professionnel de l&apos;affûtage et j&apos;utilise des techniques modernes pour redonner à vos outils leur tranchant d&apos;origine.
+          J&apos;affûte tous types de couteaux, de ciseaux et d&apos;outils de jardinage. Je peux également affûter vos outils de cuisine, vos outils de boucherie, vos outils de jardinage, vos outils de pêche, vos outils de chasse, etc. Je suis un professionnel de l&apos;affûtage et j&apos;utilise des techniques modernes pour redonner à vos outils leur tranchant d&apos;origine.
         </p>
       </div>
       <Image
@@ -47,7 +47,7 @@ const About = () => {
       <div className="sm:w-3/4 md:w-1/2 ">
         <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase">Mobilité & Déplacements</h3>
         <p className="leading-8">
-          Ma voiture me permet de me déplacer auprès de vous et m&apos;adapter à vos besoins. Comme vous pouvez le constater, j&apos;ai moi-même aménager ma voiture pour qu&apos;elle corresponde à mes besoins d&apos;entrepreneur!
+          Ma voiture me permet de me déplacer auprès de vous et m&apos;adapter à vos besoins. Comme vous pouvez le constater, j&apos;ai moi-même aménagé ma voiture !
         </p>
       </div>
       <Image
@@ -60,23 +60,22 @@ const About = () => {
       />
     </section>
     <section className="flex flex-col md:flex-row-reverse items-center justify-center gap-6 mt-14 p-5" id="tarifs">
-      <div className="sm:w-3/4 md:w-1/2 flex flex-col items-center" >
+      <div className="sm:w-3/4 md:w-1/2 flex flex-col p-5 sm:p-0" >
         <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase">Mes tarifs</h3>
+        <p>Les tarifs peuvent varier selon l&apos;état, le nombre et la dimension. (à partir de 4€)</p>
         <ul className="list-disc list-inside">
-          <li>Couteau moins de 10cm - 4,50€</li>
-          <li>Couteau plus de 10cm - devis</li>
-          <li>Couteau boucher - 8,50€</li>
-          <li>Couteau à dents - 10,00€</li>
-          <li>Couteau Céramique - devis</li>
-          <li>Couteau haut de fanne - devis</li>
-          <li>Ciseaux classiques - 7,00€</li>
-          <li>Ciseaux Pro - 14,50€</li>
-          <li>Ciseaux à bois (selon largeur) - 6,00€</li>
-          <li>Fer à cabot - 9,00€</li>
-          <li>Goufe - 7,50€</li>
-          <li>Réparation pointe cassée + affûtage - 8,50€</li>
+          <li> Couteaux toutes dimensions</li>
+          <li> Outillage de jardins</li>
+          <li>Lames de tondeuses</li>
+          <li>Sécateurs</li>
+          <li>Outillages pros sur devis</li>
+          <li>Ciseaux pros sur devis</li>
+          <li>Outils à bois </li>
+          <li>Lames de robots</li>
         </ul>
-        <p>Les tarifs peuvent varier selon l&apos;état.</p>
+        <p>
+          Tout ce qui est tranchant sera affûté avec précision et passion.
+        </p>
       </div>
       <Image
         src={meleuse}
