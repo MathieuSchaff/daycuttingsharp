@@ -1,108 +1,179 @@
-"use client"
-import { useState } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion'; // Install this package if you haven't yet
-import { GiHamburgerMenu } from 'react-icons/gi'; // Hamburger menu icon
-import { IoClose } from 'react-icons/io5'; // Close menu icon
-const variants = {
-  hidden: { opacity: 0, y: -10 },
-  visible: { opacity: 1, y: 0 },
-};
-const menuVariants = {
-  open: { opacity: 1, height: "auto" },
-  closed: { opacity: 0, height: 0 }
-};
-const Navbar = () => {
+"use client";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Phone } from "lucide-react";
 
+const menuVariants = {
+  open: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 40,
+    },
+  },
+  closed: {
+    opacity: 0,
+    x: "100%",
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 40,
+    },
+  },
+};
+
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const openMenu = () => {
-    console.log("clicked")
-    setIsMenuOpen(true);
-  };
-  const closeMenu = () => {
-    console.log("clicked")
-    setIsMenuOpen(false);
-  };
-  return (<>
-    <nav className="flex md:justify-between md:items-center">
-      <ul className="flex gap-6">
-        <motion.li
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          variants={variants}
-          initial="hidden"
-          animate="visible"
-          className="cursor-pointer uppercase hidden md:block"
-        >
-          <Link href="#about">à propos</Link>
-        </motion.li>
-        <motion.li
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          variants={variants}
-          initial="hidden"
-          animate="visible"
-          className="cursor-pointer uppercase hidden md:block"
-        >
-          <Link href="#contact">Contact</Link>
-        </motion.li>
-        <div className="md:hidden hover:cursor-pointer" onClick={openMenu}>
-          {isMenuOpen ? <IoClose size={30} /> : <GiHamburgerMenu size={30} />}
-        </div>
-      </ul>
-    </nav>
-    <AnimatePresence>
-      {isMenuOpen && (
-        <motion.div
-          className="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex justify-center items-center z-10 md:hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={closeMenu}
-        >
-          <motion.nav
-            className="min-h-0 bg-browney p-8 rounded-md text-darkgrey font-bold flex flex-col justify-center items-center w-1/2 min-w-[250px] h-1/2"
-            variants={menuVariants}
-            initial="closed"
-            animate="open"
-            exit="closed"
-            transition={{ damping: 300 }}
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  // Close menu on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMenu();
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
+  const navLinks = [
+    { href: "#about", label: "À propos" },
+    { href: "#tarifs", label: "Tarifs" },
+    { href: "#contact", label: "Contact" },
+    { href: "#faq", label: "FAQ" },
+  ];
+
+  return (
+    <>
+      {/* Desktop Navigation */}
+      <nav className="hidden md:flex items-center space-x-8">
+        {navLinks.map((link, index) => (
+          <motion.div
+            key={link.href}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
           >
-            <button onClick={closeMenu} className="hover:cursor-pointer self-end z-50 text-honolulu">
-              <IoClose size={30} />{" "}
-            </button>
-            <ul className="flex flex-col gap-8 mt-3">
-              <motion.li
-                whileTap={{ scale: 0.9 }}
-                initial="hidden"
-                animate="visible"
-                className="cursor-pointer"
-              >
-                <Link href="#about" className='uppercase'>à propos</Link>
-              </motion.li>
-              <motion.li
-                whileTap={{ scale: 0.9 }}
-                initial="hidden"
-                animate="visible"
-                className="cursor-pointer uppercase"
-              >
-                <Link href="#tarifs">Tarifs</Link>
-              </motion.li>
-              <motion.li
-                whileTap={{ scale: 0.9 }}
-                initial="hidden"
-                animate="visible"
-                className="cursor-pointer uppercase"
-              >
-                <Link href="#contact">Contact</Link>
-              </motion.li>
-            </ul>
-          </motion.nav>
+            <Link
+              href={link.href}
+              className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+            >
+              {link.label}
+            </Link>
+          </motion.div>
+        ))}
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4 }}
+        >
+          <a
+            href="tel:+0676306582"
+            className="btn-primary inline-flex items-center gap-2"
+          >
+            <Phone className="w-4 h-4" />
+            Appeler
+          </a>
         </motion.div>
-      )}
-    </AnimatePresence>
-  </>
+      </nav>
+
+      {/* Mobile Menu Button */}
+      <button
+        onClick={toggleMenu}
+        className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+        aria-label="Toggle menu"
+      >
+        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeMenu}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+            />
+
+            {/* Mobile Menu */}
+            <motion.nav
+              variants={menuVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
+              className="fixed top-0 right-0 h-full w-80 max-w-[90vw] bg-card border-l border-border z-50 md:hidden"
+            >
+              <div className="flex flex-col h-full">
+                {/* Header */}
+                <div className="flex items-center justify-between p-6 border-b border-border">
+                  <span className="text-xl font-bold text-primary">Menu</span>
+                  <button
+                    onClick={closeMenu}
+                    className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+                    aria-label="Close menu"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
+
+                {/* Navigation Links */}
+                <div className="flex-1 p-6">
+                  <ul className="space-y-6">
+                    {navLinks.map((link, index) => (
+                      <motion.li
+                        key={link.href}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <Link
+                          href={link.href}
+                          onClick={closeMenu}
+                          className="block text-lg font-medium text-foreground hover:text-primary transition-colors duration-300"
+                        >
+                          {link.label}
+                        </Link>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Call Button */}
+                <div className="p-6 border-t border-border">
+                  <a
+                    href="tel:+0676306582"
+                    onClick={closeMenu}
+                    className="btn-primary w-full justify-center inline-flex items-center gap-2"
+                  >
+                    <Phone className="w-5 h-5" />
+                    06 76 30 65 82
+                  </a>
+                </div>
+              </div>
+            </motion.nav>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

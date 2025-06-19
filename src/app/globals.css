@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
  
@@ -81,5 +81,163 @@
     @apply bg-background text-foreground;
     color:  theme(colors[browney]);
     background: theme(colors[darkgrey]);
+  }
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 15 15% 6%;
+    --foreground: 40 15% 95%;
+
+    --card: 20 15% 8%;
+    --card-foreground: 40 15% 95%;
+
+    --popover: 20 15% 8%;
+    --popover-foreground: 40 15% 95%;
+
+    --primary: 35 100% 50%;
+    --primary-foreground: 20 15% 8%;
+
+    --secondary: 25 25% 15%;
+    --secondary-foreground: 40 15% 85%;
+
+    --muted: 25 15% 12%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 35 80% 45%;
+    --accent-foreground: 20 15% 8%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 40 15% 95%;
+
+    --border: 25 15% 18%;
+    --input: 25 15% 18%;
+    --ring: 35 100% 50%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-6xl lg:text-7xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--background)) 0%,
+      hsl(25 20% 10%) 50%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  .card-glass {
+    @apply backdrop-blur-sm bg-card/80 border border-border/50;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(35 90% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 
+           px-8 py-4 rounded-lg font-semibold transition-all duration-300
+           hover:scale-105 hover:shadow-lg hover:shadow-primary/25;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80
+           border border-border/50 px-6 py-3 rounded-lg font-medium
+           transition-all duration-300 hover:border-primary/50;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+
+  .service-card {
+    @apply card-glass p-8 rounded-2xl hover:bg-card/90 
+           transition-all duration-500 hover:scale-[1.02]
+           hover:shadow-xl hover:shadow-primary/10;
+  }
+
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(2deg);
+    }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  .stagger-4 {
+    animation-delay: 0.4s;
   }
 }
