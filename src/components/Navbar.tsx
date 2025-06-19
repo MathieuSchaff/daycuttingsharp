@@ -11,12 +11,10 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  // Ensure component is mounted on client
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -37,128 +35,61 @@ const Navbar = () => {
   ];
 
   const MobileMenu = () => (
-    <div className="fixed inset-0 z-[9999] md:hidden">
-      {/* Full screen backdrop with gradient */}
-      <div
-        className="absolute inset-0 w-full h-full"
-        style={{
-          background:
-            "linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%)",
-        }}
-        onClick={closeMenu}
-      >
-        {/* Menu content */}
-        <div className="flex flex-col h-full justify-center items-center px-8 relative">
-          {/* Close button */}
-          <button
+    <div className="fixed inset-0 z-[9999] bg-background flex flex-col">
+      {/* Close button - plus visible */}
+      <div className="flex justify-end p-4">
+        <button
+          onClick={closeMenu}
+          className="p-3 rounded-full bg-primary/20 border-2 border-primary/40 text-primary hover:bg-primary/30 hover:scale-110 hover:rotate-90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary"
+          aria-label="Fermer le menu"
+        >
+          <X size={28} />
+        </button>
+      </div>
+
+      {/* Menu content - centré avec espace pour le bouton */}
+      <div className="flex-1 flex flex-col items-center justify-center px-6 pb-8">
+        {/* Logo */}
+        <div className="mb-8 text-center">
+          <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 hover:scale-110 transition-transform">
+            <span className="text-2xl font-bold text-background">D</span>
+          </div>
+          <h2 className="text-xl font-bold text-primary mb-1">
+            Day Cutting Sharp
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            Affûteur professionnel
+          </p>
+        </div>
+
+        {/* Navigation */}
+        <nav className="mb-8">
+          <ul className="space-y-4 text-center">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  onClick={closeMenu}
+                  className="block text-lg font-medium text-foreground hover:text-primary py-2 px-4 rounded-lg border border-transparent hover:border-primary/20 hover:bg-primary/5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* Call button - avec plus d'espace */}
+        <div className="w-full max-w-xs">
+          <a
+            href="tel:+0676306582"
             onClick={closeMenu}
-            className="absolute top-8 right-8 p-3 rounded-full transition-all duration-300 hover:scale-110"
-            style={{
-              backgroundColor: "rgba(249, 115, 22, 0.1)",
-              color: "#f97316",
-              border: "1px solid rgba(249, 115, 22, 0.3)",
-            }}
+            className="btn-primary w-full text-base py-3 px-4 flex items-center justify-center gap-2"
+            aria-label="Appeler Jeff"
           >
-            <X size={24} />
-          </button>
-
-          {/* Logo/Branding */}
-          <div className="text-center mb-12">
-            <div
-              className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center"
-              style={{ backgroundColor: "#f97316" }}
-            >
-              <span className="text-3xl font-bold" style={{ color: "#0f0f0f" }}>
-                D
-              </span>
-            </div>
-            <h2
-              className="text-2xl font-bold mb-2"
-              style={{ color: "#f97316" }}
-            >
-              Day Cutting Sharp
-            </h2>
-            <p style={{ color: "#888888" }}>Affûteur professionnel à Sète</p>
-          </div>
-
-          {/* Navigation links */}
-          <nav className="mb-12">
-            <ul className="space-y-6 text-center">
-              {navLinks.map((link, index) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    onClick={closeMenu}
-                    className="block text-2xl font-medium py-4 px-8 rounded-xl transition-all duration-300 hover:scale-105"
-                    style={{
-                      color: "#ffffff",
-                      background: "rgba(255, 255, 255, 0.05)",
-                      border: "1px solid rgba(255, 255, 255, 0.1)",
-                      backdropFilter: "blur(10px)",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.backgroundColor =
-                        "rgba(249, 115, 22, 0.1)";
-                      e.target.style.borderColor = "rgba(249, 115, 22, 0.3)";
-                      e.target.style.color = "#f97316";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.backgroundColor =
-                        "rgba(255, 255, 255, 0.05)";
-                      e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
-                      e.target.style.color = "#ffffff";
-                    }}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Call button */}
-          <div className="text-center">
-            <a
-              href="tel:+0676306582"
-              onClick={closeMenu}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-xl transition-all duration-300 hover:scale-105 shadow-lg"
-              style={{
-                background: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)",
-                color: "#ffffff",
-                boxShadow: "0 10px 30px rgba(249, 115, 22, 0.3)",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.transform = "scale(1.05) translateY(-2px)";
-                e.target.style.boxShadow =
-                  "0 15px 40px rgba(249, 115, 22, 0.4)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.transform = "scale(1)";
-                e.target.style.boxShadow =
-                  "0 10px 30px rgba(249, 115, 22, 0.3)";
-              }}
-            >
-              <Phone className="w-6 h-6" />
-              06 76 30 65 82
-            </a>
-            <p className="mt-4 text-sm" style={{ color: "#888888" }}>
-              Disponible de 9h à 17h
-            </p>
-          </div>
-
-          {/* Decorative elements */}
-          <div className="absolute top-1/4 left-8 opacity-10">
-            <div
-              className="w-32 h-32 rounded-full"
-              style={{ backgroundColor: "#f97316" }}
-            />
-          </div>
-          <div className="absolute bottom-1/4 right-8 opacity-10">
-            <div
-              className="w-24 h-24 rounded-full"
-              style={{ backgroundColor: "#f97316" }}
-            />
-          </div>
+            <Phone className="w-4 h-4 flex-shrink-0" />
+            <span>06 76 30 65 82</span>
+          </a>
         </div>
       </div>
     </div>
@@ -172,7 +103,7 @@ const Navbar = () => {
           <Link
             key={link.href}
             href={link.href}
-            className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+            className="text-foreground hover:text-primary transition-colors duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-md px-2 py-1"
           >
             {link.label}
           </Link>
@@ -181,6 +112,7 @@ const Navbar = () => {
         <a
           href="tel:+0676306582"
           className="btn-primary inline-flex items-center gap-2"
+          aria-label="Appeler Jeff"
         >
           <Phone className="w-4 h-4" />
           Appeler
@@ -190,8 +122,8 @@ const Navbar = () => {
       {/* Mobile Menu Button */}
       <button
         onClick={toggleMenu}
-        className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
-        aria-label="Toggle menu"
+        className="md:hidden p-2 text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-md"
+        aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
       >
         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>

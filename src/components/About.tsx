@@ -1,216 +1,122 @@
 import Image from "next/image";
-import { CheckCircle, Star, Car, Hammer } from "lucide-react";
-
-// Import des images (assumant qu'elles existent)
-const profil = "/profil.jpg";
-const meleuse = "/meleuse1.jpg";
-const car = "/car.jpg";
-const jardinage = "/jardinage.jpg";
-
+import profil from "../../public/profil.jpg";
+import meleuse from "../../public/meleuse1.jpg";
+import car from "../../public/car.jpg";
+import jardinage from "../../public/jardinage.jpg";
 const About = () => {
-  const services = [
-    "Couteaux toutes dimensions",
-    "Outillage de jardins",
-    "Lames de tondeuses",
-    "Sécateurs",
-    "Outillages pros sur devis",
-    "Ciseaux pros sur devis",
-    "Outils à bois",
-    "Lames de robots",
-  ];
-
-  const features = [
-    {
-      icon: <Star className="w-6 h-6" />,
-      title: "Expertise Artisanale",
-      description: "Des années d'expérience pour un affûtage de précision",
-    },
-    {
-      icon: <Car className="w-6 h-6" />,
-      title: "Service Mobile",
-      description: "Je viens chez vous avec tout mon équipement",
-    },
-    {
-      icon: <Hammer className="w-6 h-6" />,
-      title: "Équipement Pro",
-      description: "Matériel moderne pour un résultat optimal",
-    },
-  ];
-
   return (
-    <div id="about" className="section-padding">
-      <div className="container-custom">
-        {/* Introduction */}
-        <div className="text-center mb-20">
-          <h2 className="text-gradient mb-6">Qui suis-je ?</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionné par l'art de la précision, je mets mon expertise au
-            service de vos outils tranchants
+    <div
+      id="about"
+      className="border-browney  border-t border-t-browney pt-10 pb-10"
+    >
+      <h2 className="whitespace-nowrap text-2xl text-center sm:text-3xl md:text-4xl uppercase font-bold">
+        Qui suis-je ?
+      </h2>
+      <section className="flex flex-col md:flex-row items-center justify-center gap-6 mt-12 p-5">
+        <div className="sm:w-3/4 md:w-1/2 ">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">
+            PASSIONNÉ PAR L&apos;ART DE LA PRÉCISION
+          </h3>
+          <p className="leading-8">
+            Moi, c&apos;est Jeff.
+            <br />
+            Avec une passion pour l&apos;affûtage des couteaux, j&apos;ai
+            développé mes compétences au fil des années pour offrir un service
+            de qualité supérieure. Ayant acquis une expérience précieuse dans
+            l&apos;art de l&apos;affûtage après avoir perfectionné mes
+            techniques, je suis prêt à mettre mon savoir-faire au service de
+            votre cuisine ou de votre établissement.
           </p>
         </div>
-
-        {/* Main Profile Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 text-sm font-medium text-primary">
-                <Star className="w-4 h-4" />
-                Artisan Professionnel
-              </div>
-
-              <h3 className="text-3xl font-bold">
-                PASSIONNÉ PAR L'ART DE LA PRÉCISION
-              </h3>
-
-              <p className="text-muted-foreground leading-relaxed">
-                Moi, c'est <strong className="text-foreground">Jeff</strong>.
-                <br />
-                <br />
-                Avec une passion pour l'affûtage des couteaux, j'ai développé
-                mes compétences au fil des années pour offrir un service de
-                qualité supérieure. Ayant acquis une expérience précieuse dans
-                l'art de l'affûtage après avoir perfectionné mes techniques, je
-                suis prêt à mettre mon savoir-faire au service de votre cuisine
-                ou de votre établissement.
-              </p>
-            </div>
-
-            {/* Features */}
-            <div className="grid sm:grid-cols-3 gap-4 pt-6">
-              {features.map((feature, index) => (
-                <div key={index} className="text-center p-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 text-primary">
-                    {feature.icon}
-                  </div>
-                  <h4 className="text-sm font-semibold mb-1">
-                    {feature.title}
-                  </h4>
-                  <p className="text-xs text-muted-foreground">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl">
-              <Image
-                src={profil}
-                alt="Jeff, artisan affûteur professionnel"
-                width={500}
-                height={600}
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-            </div>
-          </div>
+        <Image
+          src={profil}
+          alt="Jeff"
+          width={400}
+          height={300}
+          className="rounded-lg"
+          objectFit="cover"
+        />
+      </section>
+      <section className="flex flex-col md:flex-row-reverse items-center justify-center gap-6 mt-14 p-5">
+        <div className="sm:w-3/4 md:w-1/2 ">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase">
+            Affûtage
+          </h3>
+          <p className="leading-8">
+            J&apos;affûte tous types de couteaux, de ciseaux et d&apos;outils de
+            jardinage. Je peux également affûter vos outils de cuisine, vos
+            outils de boucherie, vos outils de jardinage, vos outils de pêche,
+            vos outils de chasse, etc. Je suis un professionnel de
+            l&apos;affûtage et j&apos;utilise des techniques modernes pour
+            redonner à vos outils leur tranchant d&apos;origine.
+          </p>
         </div>
+        <Image
+          src={jardinage}
+          alt="equipement couteau"
+          width={400}
+          height={300}
+          className="rounded-lg"
+          objectFit="cover"
+        />
+      </section>
 
-        {/* Services Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-20">
-          {/* Affûtage */}
-          <div className="service-card">
-            <div className="relative overflow-hidden rounded-xl mb-6">
-              <Image
-                src={jardinage}
-                alt="Affûtage d'outils de jardinage"
-                width={400}
-                height={250}
-                className="w-full h-48 object-cover"
-              />
-            </div>
-            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <span className="text-2xl">🔧</span>
-              AFFÛTAGE PROFESSIONNEL
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              J'affûte tous types de couteaux, de ciseaux et d'outils de
-              jardinage. Je peux également affûter vos outils de cuisine, de
-              boucherie, de pêche, de chasse, etc. J'utilise des techniques
-              modernes pour redonner à vos outils leur tranchant d'origine.
-            </p>
-          </div>
-
-          {/* Mobilité */}
-          <div className="service-card">
-            <div className="relative overflow-hidden rounded-xl mb-6">
-              <Image
-                src={car}
-                alt="Véhicule d'affûtage mobile équipé"
-                width={400}
-                height={250}
-                className="w-full h-48 object-cover"
-              />
-            </div>
-            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <Car className="w-6 h-6 text-primary" />
-              MOBILITÉ & DÉPLACEMENTS
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Ma voiture me permet de me déplacer auprès de vous et m'adapter à
-              vos besoins. Comme vous pouvez le constater, j'ai moi-même aménagé
-              ma voiture pour offrir un service professionnel directement chez
-              vous !
-            </p>
-          </div>
-
-          {/* Tarifs */}
-          <div className="service-card" id="tarifs">
-            <div className="relative overflow-hidden rounded-xl mb-6">
-              <Image
-                src={meleuse}
-                alt="Équipement professionnel d'affûtage"
-                width={400}
-                height={250}
-                className="w-full h-48 object-cover"
-              />
-            </div>
-            <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-              <span className="text-2xl">💰</span>
-              MES TARIFS
-            </h3>
-            <p className="text-sm text-muted-foreground mb-4">
-              Les tarifs peuvent varier selon l'état, le nombre et la dimension.
-              <span className="text-primary font-semibold">
-                (à partir de 4€)
-              </span>
-            </p>
-
-            <div className="grid grid-cols-1 gap-2">
-              {services.map((service, index) => (
-                <div key={index} className="flex items-center gap-2 text-sm">
-                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span>{service}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 p-4 bg-primary/10 rounded-lg border border-primary/20">
-              <p className="text-sm font-medium text-center">
-                <strong>
-                  Tout ce qui est tranchant sera affûté avec précision et
-                  passion.
-                </strong>
-              </p>
-            </div>
-          </div>
+      <section className="flex flex-col md:flex-row items-center justify-center gap-6 mt-14 p-5">
+        <div className="sm:w-3/4 md:w-1/2 ">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase">
+            Mobilité & Déplacements
+          </h3>
+          <p className="leading-8">
+            Ma voiture me permet de me déplacer auprès de vous et m&apos;adapter
+            à vos besoins. Comme vous pouvez le constater, j&apos;ai moi-même
+            aménagé ma voiture !
+          </p>
         </div>
-
-        {/* Call to Action */}
-        <div className="text-center">
-          <div className="inline-flex flex-col sm:flex-row gap-4">
-            <a href="tel:+0676306582" className="btn-primary">
-              Demander un devis gratuit
-            </a>
-            <a href="#contact" className="btn-secondary">
-              Me contacter
-            </a>
-          </div>
+        <Image
+          src={car}
+          alt="mon equipement"
+          width={400}
+          height={300}
+          className="rounded-lg"
+          objectFit="cover"
+        />
+      </section>
+      <section
+        className="flex flex-col md:flex-row-reverse items-center justify-center gap-6 mt-14 p-5"
+        id="tarifs"
+      >
+        <div className="sm:w-3/4 md:w-1/2 flex flex-col p-5 sm:p-0">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 uppercase">
+            Mes tarifs
+          </h3>
+          <p>
+            Les tarifs peuvent varier selon l&apos;état, le nombre et la
+            dimension. (à partir de 4€)
+          </p>
+          <ul className="list-disc list-inside">
+            <li> Couteaux toutes dimensions</li>
+            <li> Outillage de jardins</li>
+            <li>Lames de tondeuses</li>
+            <li>Sécateurs</li>
+            <li>Outillages pros sur devis</li>
+            <li>Ciseaux pros sur devis</li>
+            <li>Outils à bois </li>
+            <li>Lames de robots</li>
+          </ul>
+          <p>
+            Tout ce qui est tranchant sera affûté avec précision et passion.
+          </p>
         </div>
-      </div>
+        <Image
+          src={meleuse}
+          alt="equipement couteau"
+          width={400}
+          height={300}
+          className="rounded-lg"
+          objectFit="cover"
+        />
+      </section>
     </div>
   );
 };
-
 export default About;

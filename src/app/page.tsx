@@ -4,10 +4,12 @@ import Faq from "@/components/Faq";
 import Header from "@/components/Header";
 import Image from "next/image";
 import { Phone, Star, MapPin } from "lucide-react";
+import LoadingScreen from "@/components/Loading";
 
 export default function Home() {
   return (
     <>
+      <LoadingScreen />
       <div className="min-h-screen">
         <Header />
 
@@ -49,7 +51,7 @@ export default function Home() {
                   </a>
                 </div>
 
-                <div className="flex items-center gap-6 pt-6 fade-in stagger-2">
+                <div className="hidden sm:block flex items-center gap-6 pt-6 fade-in stagger-2">
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star

@@ -92,13 +92,15 @@
   .btn-primary {
     @apply bg-primary text-primary-foreground hover:bg-primary/90 
            px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold transition-all duration-300
-           hover:scale-105 hover:shadow-lg hover:shadow-primary/25 text-base md:text-lg;
+           hover:scale-105 hover:shadow-lg hover:shadow-primary/25 text-base md:text-lg
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
   }
 
   .btn-secondary {
     @apply bg-secondary text-secondary-foreground hover:bg-secondary/80
            border border-border/50 px-6 py-3 rounded-lg font-medium
-           transition-all duration-300 hover:border-primary/50;
+           transition-all duration-300 hover:border-primary/50 hover:scale-105
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
   }
 
   .section-padding {
@@ -153,5 +155,93 @@
   }
   .stagger-4 {
     animation-delay: 0.4s;
+  }
+}
+/* Ajustements pour grands mobiles (iPhone 14 Pro Max, etc.) */
+@media (min-width: 390px) and (max-width: 639px) {
+  .container-custom {
+    @apply px-8;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+}
+
+/* iPad Portrait (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Hero section spécifique iPad */
+  .hero-gradient {
+    min-height: auto;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+
+  /* Garde le layout en colonne unique sur iPad portrait */
+  .hero-gradient .grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Centre l'image et limite sa taille */
+  .hero-gradient img {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Ajuste les tailles de texte */
+  h1 {
+    @apply text-5xl;
+  }
+
+  /* Améliore l'espacement des boutons */
+  .btn-primary,
+  .btn-secondary {
+    @apply px-6 py-3;
+    min-width: 200px;
+  }
+
+  /* Services cards */
+  .service-card {
+    @apply p-6;
+  }
+
+  /* Container adjustments */
+  .container-custom {
+    @apply px-8 max-w-5xl;
+  }
+
+  /* Section padding réduit */
+  .section-padding {
+    @apply py-16;
+  }
+}
+
+/* iPad Paysage et iPad Pro Portrait */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .hero-gradient {
+    padding-top: 0;
+  }
+
+  .container-custom {
+    @apply max-w-6xl px-8;
+  }
+
+  /* Image size control */
+  .hero-gradient img {
+    max-width: 450px;
+  }
+}
+
+/* Ajustements pour iPhone 14 Pro Max et similaires */
+@media (min-width: 428px) and (max-width: 767px) {
+  h1 {
+    @apply text-5xl;
+  }
+
+  .container-custom {
+    @apply px-8;
   }
 }
