@@ -9,7 +9,7 @@ const Contact = () => {
           <h2 className="text-gradient mb-6">Contactez-moi</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Prêt à redonner vie à vos outils ? Contactez-moi pour un devis
-            gratuit ou pour toute question sur mes services d'affûtage
+            gratuit ou pour toute question sur mes services d&apos;affûtage
             professionnel.
           </p>
         </div>
@@ -74,7 +74,8 @@ const Contact = () => {
                 <span className="text-4xl">📞</span>
               </div>
               <h3 className="text-2xl font-bold mb-4">
-                Ne négligez pas l'importance d'avoir des couteaux bien affûtés
+                Ne négligez pas l&apos;importance d&apos;avoir des couteaux bien
+                affûtés
               </h3>
             </div>
 
@@ -92,8 +93,8 @@ const Contact = () => {
                     <br />
                     <br />
                     Je serai ravi de discuter de vos besoins spécifiques et de
-                    vous fournir des conseils d'expert en matière d'entretien
-                    des couteaux.
+                    vous fournir des conseils d&apos;expert en matière
+                    d&apos;entretien des couteaux.
                   </p>
                 </div>
 
@@ -116,7 +117,7 @@ const Contact = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary">✓</span>
-                      <span>Conseils d'entretien personnalisés</span>
+                      <span>Conseils d&apos;entretien personnalisés</span>
                     </li>
                   </ul>
                 </div>

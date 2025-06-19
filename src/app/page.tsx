@@ -32,7 +32,7 @@ export default function Home() {
 
                   <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
                     Redonnez vie à vos couteaux, ciseaux et outils de jardinage
-                    avec un service d'affûtage professionnel à domicile.
+                    avec un service d&apos;affûtage professionnel à domicile.
                   </p>
                 </div>
 

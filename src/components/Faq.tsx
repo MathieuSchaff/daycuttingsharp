@@ -16,35 +16,35 @@ const Faq = () => {
     {
       question: "À quelle heure peut-on me joindre ?",
       answer:
-        "Je suis joignable de 9h à 17h, du lundi au samedi. Pour les urgences ou demandes spéciales, n'hésitez pas à laisser un message.",
+        "Je suis joignable de 9h à 17h, du lundi au samedi. Pour les urgences ou demandes spéciales, n&apos;hésitez pas à laisser un message.",
     },
     {
       question: "Ai-je besoin de fournir du matériel ?",
       answer:
-        "Pas du tout ! Je suis un affûteur autonome. La seule chose dont j'ai besoin est une place de parking. Je dispose d'un groupe électrogène dans mon véhicule et de tout l'équipement professionnel nécessaire.",
+        "Pas du tout ! Je suis un affûteur autonome. La seule chose dont j&apos;ai besoin est une place de parking. Je dispose d&apos;un groupe électrogène dans mon véhicule et de tout l&apos;équipement professionnel nécessaire.",
     },
     {
-      question: "Quels types d'outils pouvez-vous affûter ?",
+      question: "Quels types d&apos;outils pouvez-vous affûter ?",
       answer:
-        "J'affûte tous types de couteaux (cuisine, boucherie, chasse), ciseaux (coiffure, couture), outils de jardinage (sécateurs, lames de tondeuse), outils à bois, et bien plus. Si ça coupe, je peux l'affûter !",
+        "J&apos;affûte tous types de couteaux (cuisine, boucherie, chasse), ciseaux (coiffure, couture), outils de jardinage (sécateurs, lames de tondeuse), outils à bois, et bien plus. Si ça coupe, je peux l&apos;affûter !",
     },
     {
-      question: "Combien coûte l'affûtage ?",
+      question: "Combien coûte l&apos;affûtage ?",
       answer:
-        "Les tarifs commencent à partir de 4€ et varient selon l'état, la taille et le type d'outil. Je fournis toujours un devis gratuit avant intervention.",
+        "Les tarifs commencent à partir de 4€ et varient selon l&apos;état, la taille et le type d&apos;outil. Je fournis toujours un devis gratuit avant intervention.",
     },
     {
       question: "Dans quelles zones intervenez-vous ?",
       answer:
-        "J'interviens principalement à Sète et dans les environs. Pour les zones plus éloignées, contactez-moi pour étudier la faisabilité.",
+        "J&apos;interviens principalement à Sète et dans les environs. Pour les zones plus éloignées, contactez-moi pour étudier la faisabilité.",
     },
     {
-      question: "Combien de temps dure l'intervention ?",
+      question: "Combien de temps dure l&apos;intervention ?",
       answer:
-        "Cela dépend du nombre d'outils et de leur état. En général, comptez entre 30 minutes et 2 heures. Je travaille directement chez vous pour votre confort.",
+        "Cela dépend du nombre d&apos;outils et de leur état. En général, comptez entre 30 minutes et 2 heures. Je travaille directement chez vous pour votre confort.",
     },
     {
-      question: "Proposez-vous des conseils d'entretien ?",
+      question: "Proposez-vous des conseils d&apos;entretien ?",
       answer:
         "Absolument ! Je partage toujours mes conseils pour maintenir vos outils tranchants plus longtemps et optimiser leur durée de vie.",
     },
@@ -61,7 +61,7 @@ const Faq = () => {
           <h2 className="text-gradient mb-6">Questions Fréquentes</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Trouvez rapidement les réponses à vos questions sur mes services
-            d'affûtage
+            d&apos;affûtage
           </p>
         </div>
 
@@ -97,11 +97,11 @@ const Faq = () => {
             <div className="space-y-6">
               <div>
                 <h3 className="text-2xl font-bold mb-4">
-                  Vous avez d'autres questions ?
+                  Vous avez d&apos;autres questions ?
                 </h3>
                 <p className="text-muted-foreground">
-                  N'hésitez pas à me contacter directement. Je serai ravi de
-                  répondre à toutes vos interrogations et de vous conseiller.
+                  N&apos;hésitez pas à me contacter directement. Je serai ravi
+                  de répondre à toutes vos interrogations et de vous conseiller.
                 </p>
               </div>
 
