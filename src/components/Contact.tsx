@@ -130,10 +130,10 @@ const Contact = () => {
                   </h4>
                   <a
                     href="tel:+0676306582"
-                    className="btn-primary w-full text-xl py-6 flex items-center justify-center gap-3"
+                    className="btn-primary w-full text-lg md:text-xl py-6 flex items-center justify-center gap-3"
                   >
-                    <Phone className="w-6 h-6" />
-                    06 76 30 65 82
+                    <Phone className="w-5 h-5 md:w-6 md:h-6" />
+                    <span className="whitespace-nowrap">06 76 30 65 82</span>
                   </a>
                   <p className="text-xs text-center text-muted-foreground mt-3">
                     Disponible de 9h à 17h, du lundi au samedi

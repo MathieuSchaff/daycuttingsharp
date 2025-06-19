@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-[60] bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container-custom">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-4">
