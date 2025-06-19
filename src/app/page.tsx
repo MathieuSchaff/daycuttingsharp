@@ -95,7 +95,7 @@ export default function Home() {
         <section className="section-padding bg-muted/30">
           <div className="container-custom">
             <div className="text-center mb-16">
-              <h2 className="text-gradient mb-6">Services d'Affûtage</h2>
+              <h2 className="text-gradient mb-6">Services d&apos;Affûtage</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Tout ce qui coupe sera affûté avec précision et passion
               </p>
