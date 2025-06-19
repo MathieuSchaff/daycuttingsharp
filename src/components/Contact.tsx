@@ -35,7 +35,7 @@ const Contact = () => {
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <MapPin className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-lg font-bold mb-2">Zone d'intervention</h3>
+            <h3 className="text-lg font-bold mb-2">Zone d&apos;intervention</h3>
             <p className="text-muted-foreground">Sète et ses environs</p>
           </div>
 
