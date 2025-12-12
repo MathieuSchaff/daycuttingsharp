@@ -21,7 +21,7 @@ const LoadingScreen = () => {
           className="fixed inset-0 z-[9999] flex items-center justify-center"
           style={{
             background:
-              "linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%)",
+              "linear-gradient(140deg, #0b1d30 0%, #0e3049 45%, #0a2a3f 100%)",
           }}
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -32,7 +32,7 @@ const LoadingScreen = () => {
             <motion.div
               className="absolute w-96 h-96 rounded-full opacity-20"
               style={{
-                background: "radial-gradient(circle, #f97316, transparent)",
+                background: "radial-gradient(circle, #38bdf8, transparent)",
               }}
               animate={{
                 x: [0, 100, 0],
@@ -44,7 +44,7 @@ const LoadingScreen = () => {
             <motion.div
               className="absolute w-64 h-64 rounded-full opacity-15 right-20 bottom-20"
               style={{
-                background: "radial-gradient(circle, #ea580c, transparent)",
+                background: "radial-gradient(circle, #22d3ee, transparent)",
               }}
               animate={{
                 x: [0, -80, 0],
@@ -72,7 +72,7 @@ const LoadingScreen = () => {
               <motion.div
                 className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center"
                 style={{
-                  background: "linear-gradient(135deg, #f97316, #ea580c)",
+                  background: "linear-gradient(135deg, #38bdf8, #22d3ee)",
                 }}
                 animate={{ rotate: 360 }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
@@ -89,11 +89,14 @@ const LoadingScreen = () => {
             >
               <h1
                 className="text-3xl font-bold mb-2"
-                style={{ color: "#f97316" }}
+                style={{ color: "hsl(var(--primary))" }}
               >
                 Day Cutting Sharp
               </h1>
-              <p className="text-lg mb-8" style={{ color: "#888888" }}>
+              <p
+                className="text-lg mb-8"
+                style={{ color: "hsl(var(--muted-foreground))" }}
+              >
                 Affûteur Professionnel
               </p>
             </motion.div>
@@ -109,7 +112,7 @@ const LoadingScreen = () => {
                 <motion.div
                   key={i}
                   className="w-3 h-3 rounded-full"
-                  style={{ backgroundColor: "#f97316" }}
+                  style={{ backgroundColor: "hsl(var(--accent))" }}
                   animate={{
                     y: [0, -20, 0],
                     opacity: [0.5, 1, 0.5],
@@ -127,7 +130,7 @@ const LoadingScreen = () => {
             {/* Loading Text */}
             <motion.p
               className="text-sm"
-              style={{ color: "#666666" }}
+              style={{ color: "hsl(var(--muted-foreground))" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 }}
